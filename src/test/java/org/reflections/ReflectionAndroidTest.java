@@ -5,8 +5,11 @@ import org.reflections.scanners.Scanners;
 import org.reflections.serializers.JsonSerializer;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
+import org.reflections.vfs.AndroidManifest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.io.File;
+
+import static org.junit.jupiter.api.Assertions.*;
 import static org.reflections.ReflectionsTest.getUserDir;
 
 public class ReflectionAndroidTest {
@@ -32,5 +35,17 @@ public class ReflectionAndroidTest {
         assertEquals(
                 Reflections.collect("/META-INF/reflections/testModel-AndroidManifest.xml", a -> true).getStore(),
                 Reflections.collect("/META-INF/reflections/saved-testModel-AndroidManifest.xml", a -> true).getStore());
+    }
+
+    /**
+     * When - Need to collect Android runtime meta data
+     * Then - Search for and fetch AndroidManifest.xml files
+     */
+    @Test
+    public void testCollectFiles() {
+        AndroidManifest androidManifest = new AndroidManifest();
+        File testFile = new File("../");
+        androidManifest.collectFiles(testFile);
+        assertNotNull(AndroidManifest.fileList);
     }
 }
