@@ -28,15 +28,9 @@ public class ReflectionAndroidTest {
         String targetDir = getUserDir() + "/target/test-classes";
 
         // xml
-        reflections.save(targetDir + "/META-INF/reflections/saved-testModel-Android.xml");
+        reflections.save(targetDir + "/META-INF/reflections/saved-testModel-AndroidManifest.xml");
         assertEquals(
-                Reflections.collect("/META-INF/reflections/testModel-Android.xml", a -> true).getStore(),
-                Reflections.collect("/META-INF/reflections/saved-testModel-Android.xml", a -> true).getStore());
-
-        // json
-        reflections.save(targetDir + "/META-INF/reflections/saved-testModel-Android.json", new JsonSerializer());
-        assertEquals(
-                Reflections.collect("/META-INF/reflections/testModel-Android.json", a -> true).getStore(),
-                Reflections.collect("/META-INF/reflections/saved-testModel-Android.json", a -> true).getStore());
+                Reflections.collect("/META-INF/reflections/testModel-AndroidManifest.xml", a -> true).getStore(),
+                Reflections.collect("/META-INF/reflections/saved-testModel-AndroidManifest.xml", a -> true).getStore());
     }
 }
