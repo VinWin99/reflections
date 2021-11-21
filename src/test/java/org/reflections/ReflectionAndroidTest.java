@@ -13,7 +13,7 @@ public class ReflectionAndroidTest {
 
     /**
      * When - Need to collect run time data from Android applications
-     * Then - Check and fetch from the Android.xml generated runtime file
+     * Then - Check and fetch from the AndroidManifest.xml generated runtime file
      */
     @Test
     public void testCollectAndroid() {
