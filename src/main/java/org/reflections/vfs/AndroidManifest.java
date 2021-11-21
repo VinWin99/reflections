@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AndroidManifest {
-    public static List<File> fileList = new ArrayList<File>();
-    public static String androidFile = "AndroidManifest.xml";
+    public static final List<File> fileList = new ArrayList<File>();
+    public static final String androidFile = "AndroidManifest.xml";
 
     /**
      * <p> Go through the project and look for Android Runtime files
