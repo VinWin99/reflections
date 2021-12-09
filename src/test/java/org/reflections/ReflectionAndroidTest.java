@@ -2,10 +2,9 @@ package org.reflections;
 
 import org.junit.jupiter.api.Test;
 import org.reflections.scanners.Scanners;
-import org.reflections.serializers.JsonSerializer;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
-import org.reflections.vfs.AndroidManifest;
+import org.reflections.vfs.AndroidCollector;
 
 import java.io.File;
 
@@ -43,9 +42,9 @@ public class ReflectionAndroidTest {
      */
     @Test
     public void testCollectFiles() {
-        AndroidManifest androidManifest = new AndroidManifest();
+        AndroidCollector androidManifest = new AndroidCollector();
         File testFile = new File("../");
         androidManifest.collectFiles(testFile);
-        assertNotNull(AndroidManifest.fileList);
+        assertNotNull(AndroidCollector.fileList);
     }
 }
