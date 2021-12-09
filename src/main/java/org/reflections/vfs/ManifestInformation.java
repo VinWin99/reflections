@@ -20,6 +20,13 @@ public class ManifestInformation {
         scanFile(file);
     }
 
+    /**
+     * <p> Goes through manifest file and grabs elements
+     * @param file manifest file
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     */
     private void scanFile(File file) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
@@ -33,14 +40,31 @@ public class ManifestInformation {
         }
     }
 
+    /**
+     * <p> Validate the existence of an xml tag in manifest file
+     * @param flag
+     * @return
+     */
     public boolean checkTag(String flag){
         return manifestItems.stream().anyMatch(element -> element.contains(flag));
     }
 
+    /**
+     * <p> Add an item to the manifest information
+     * @param item
+     */
     public void addItem(String item) {
         manifestItems.add(item);
     }
 
+    /**
+     * <p> Gets the list of tags that match the item name
+     * @param itemName
+     * @return
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     */
     public ArrayList<String> getAttribute(String itemName) throws ParserConfigurationException, IOException, SAXException {
         File file = new File(fileName);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -57,6 +81,10 @@ public class ManifestInformation {
         return foundElements;
     }
 
+    /**
+     *
+     * @return String format of manifest information
+     */
     @Override
     public String toString() {
         return "ManifestInformation{" +

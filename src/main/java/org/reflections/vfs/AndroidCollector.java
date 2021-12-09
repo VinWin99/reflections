@@ -32,10 +32,22 @@ public class AndroidCollector {
         }
     }
 
+    /**
+     * <p> Set the location of android file
+     * @param androidFile String name of file
+     */
     public void setAndroidFile(String androidFile) {
         this.androidFile = androidFile;
     }
 
+    /**
+     *
+     * @param file manifest file
+     * @return return the info of the file in string format
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     public String parseFile(File file) throws ParserConfigurationException, SAXException, IOException {
         ManifestInformation androidFileInfo = new ManifestInformation(androidFile, file);
         return androidFileInfo.toString();

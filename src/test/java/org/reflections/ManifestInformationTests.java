@@ -15,8 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ManifestInformationTests {
 
-    String testFilePath = "/Users/vineet/Code/UIUC/CS427/finalProject/TestReflections/src/main/java/AndroidManifest/AndroidManifest.xml";
+    String testFilePath = "src/test/resources/AndroidManifest.xml";
 
+    /**
+     * <p> check that flag exists
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     @Test
     public void checkFlagPositive() throws ParserConfigurationException, SAXException, IOException {
         File test = new File(testFilePath);
@@ -24,6 +30,12 @@ public class ManifestInformationTests {
         assertTrue(manifestInformation.checkTag("uses-permission"));
     }
 
+    /**
+     * <p> check that flag does not exist
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     @Test
     public void checkFlagNegative() throws ParserConfigurationException, SAXException, IOException {
         File test = new File(testFilePath);
@@ -31,6 +43,12 @@ public class ManifestInformationTests {
         assertFalse(manifestInformation.checkTag(UUID.randomUUID().toString()));
     }
 
+    /**
+     * <p> check if can add an item
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     @Test
     public void addItemTest() throws ParserConfigurationException, SAXException, IOException {
         File test = new File(testFilePath);
@@ -41,6 +59,12 @@ public class ManifestInformationTests {
         assertEquals(manifestInformation.manifestItems.get(0), "item");
     }
 
+    /**
+     * <p> check if can get items
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     @Test
     public void getAttributeTest() throws ParserConfigurationException, SAXException, IOException {
         File test = new File(testFilePath);

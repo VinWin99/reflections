@@ -15,9 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ManifestScenarioTest {
 
-    String testFilePath = "/Users/vineet/Code/UIUC/CS427/finalProject/TestReflections/src/main/java/AndroidManifest/AndroidManifest.xml";
+    String testFilePath = "src/test/resources/AndroidManifest.xml";
 
-
+    /**
+     * <p> Check the scenario by getting manifest file and parsing it
+     * @throws ParserConfigurationException
+     * @throws SAXException
+     * @throws IOException
+     */
     @Test
     public void testManifestScenario() throws ParserConfigurationException, SAXException, IOException {
         // create Android collector
