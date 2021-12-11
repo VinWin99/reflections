@@ -21,6 +21,7 @@ public class ManifestInformation {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Goes through manifest file and grabs elements
      * @param file manifest file
      * @throws ParserConfigurationException
@@ -41,6 +42,7 @@ public class ManifestInformation {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Validate the existence of an xml tag in manifest file
      * @param flag
      * @return
@@ -50,6 +52,7 @@ public class ManifestInformation {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Add an item to the manifest information
      * @param item
      */
@@ -58,6 +61,7 @@ public class ManifestInformation {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Gets the list of tags that match the item name
      * @param itemName
      * @return
@@ -82,7 +86,7 @@ public class ManifestInformation {
     }
 
     /**
-     *
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * @return String format of manifest information
      */
     @Override

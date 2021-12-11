@@ -18,6 +18,7 @@ public class ManifestInformationTests {
     String testFilePath = "src/test/resources/AndroidManifest.xml";
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> check that flag exists
      * @throws ParserConfigurationException
      * @throws SAXException
@@ -31,6 +32,7 @@ public class ManifestInformationTests {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> check that flag does not exist
      * @throws ParserConfigurationException
      * @throws SAXException
@@ -44,6 +46,7 @@ public class ManifestInformationTests {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> check if can add an item
      * @throws ParserConfigurationException
      * @throws SAXException
@@ -60,6 +63,7 @@ public class ManifestInformationTests {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> check if can get items
      * @throws ParserConfigurationException
      * @throws SAXException

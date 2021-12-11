@@ -18,6 +18,7 @@ public class ManifestScenarioTest {
     String testFilePath = "src/test/resources/AndroidManifest.xml";
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Check the scenario by getting manifest file and parsing it
      * @throws ParserConfigurationException
      * @throws SAXException

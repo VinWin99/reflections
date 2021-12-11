@@ -11,10 +11,11 @@ import java.util.List;
 
 public class AndroidCollector {
 
-    List<File> fileList = new ArrayList<File>();
+    public List<File> fileList = new ArrayList<File>();
     String androidFile = "AndroidManifest.xml";
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Go through the project and look for Android Runtime files
      * @param file
      */
@@ -33,6 +34,7 @@ public class AndroidCollector {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * <p> Set the location of android file
      * @param androidFile String name of file
      */
@@ -41,7 +43,7 @@ public class AndroidCollector {
     }
 
     /**
-     *
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * @param file manifest file
      * @return return the info of the file in string format
      * @throws ParserConfigurationException

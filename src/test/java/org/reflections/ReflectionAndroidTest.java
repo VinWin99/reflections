@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
-import org.reflections.vfs.AndroidCollector;
 
 import java.io.File;
 
@@ -14,6 +13,7 @@ import static org.reflections.ReflectionsTest.getUserDir;
 public class ReflectionAndroidTest {
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * When - Need to collect run time data from Android applications
      * Then - Check and fetch from the AndroidManifest.xml generated runtime file
      */
@@ -37,14 +37,15 @@ public class ReflectionAndroidTest {
     }
 
     /**
+     * CS427 https://github.com/ronmamo/reflections/issues/339
      * When - Need to collect Android runtime meta data
      * Then - Search for and fetch AndroidManifest.xml files
      */
     @Test
     public void testCollectFiles() {
-        AndroidCollector androidManifest = new AndroidCollector();
+        AndroidManifest.AndroidCollector androidManifest = new AndroidManifest.AndroidCollector();
         File testFile = new File("../");
         androidManifest.collectFiles(testFile);
-        assertNotNull(AndroidCollector.fileList);
+        assertNotNull(androidManifest.fileList);
     }
 }
